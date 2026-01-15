@@ -4,9 +4,9 @@ import json
 from openai import OpenAI
 
 # ================= 配置区域 (填入你的 Key) =================
-DEEPSEEK_API_KEY = "sk-512103328d6544f18bd69d4213067911"
+DEEPSEEK_API_KEY = st.secrets["DEEPSEEK_API_KEY"]
 # 如果没有 Unsplash Key，请留空，会显示占位图
-UNSPLASH_ACCESS_KEY = "fmQj8pVpqdvtSZo0PgdRXK260apPUlS0lXdzP_eadxs" 
+ZHIPU_API_KEY = st.secrets["ZHIPU_API_KEY"]
 # =========================================================
 
 # 初始化 OpenAI 客户端
@@ -105,4 +105,5 @@ if generate_btn:
             st.markdown(article_data['content'], unsafe_allow_html=True)
 
         else:
+
             status_box.update(label="❌ 生成失败，请检查日志", state="error")
